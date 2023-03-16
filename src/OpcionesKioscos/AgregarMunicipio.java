@@ -234,7 +234,7 @@ public class AgregarMunicipio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
          if (!txtNombre.getText().isEmpty()&&!txtCodigo.getText().isEmpty()) {
-         AgregarMuni muni0= new AgregarMuni(Region.getSelectedItem().toString(), txtCodigo.getText(), txtCodigo.getText());
+         AgregarMuni muni0= new AgregarMuni(Region.getSelectedItem().toString(), txtCodigo.getText(), txtNombre.getText());
          muni.add(muni0);
          JOptionPane.showMessageDialog(this,"Usuario creado con exito");
           txtCodigo.setText("");

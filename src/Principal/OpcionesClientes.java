@@ -9,6 +9,8 @@ import static OpcionesClientes.DatosFacturacion.datos;
 
 import OpcionesClientes.RegistrarTarjeta;
 import static OpcionesClientes.RegistrarTarjeta.tarjeta;
+import static OpcionesKioscos.AgregarDepartamentos.departamentos;
+import static OpcionesKioscos.AgregarMunicipio.muni;
 import static Principal.Cotización.cotiza;
 import static Principal.Rgistro.clientes;
 import java.util.ArrayList;
@@ -247,7 +249,7 @@ public class OpcionesClientes extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         
-        Cotización pantalla = new Cotización(cotiza, datos);
+        Cotización pantalla = new Cotización(cotiza, datos,departamentos,muni);
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
         this.setVisible(false);
