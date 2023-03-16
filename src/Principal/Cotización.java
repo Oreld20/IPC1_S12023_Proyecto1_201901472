@@ -17,14 +17,16 @@ import javax.swing.JOptionPane;
  */
 public class Cotización extends javax.swing.JFrame {
 public static ArrayList<Cotiza> cotiza = new ArrayList<Cotiza>();
+ArrayList<DatosFactu> datos;
 private double Precio =0;
 private int contador =0;
  private String codigoPaquete = "IPC1C5EGM0" ;
     /**
      * Creates new form Cotización
      */
-    public Cotización(ArrayList<Cotiza> cotiza) {
+    public Cotización(ArrayList<Cotiza> cotiza,ArrayList<DatosFactu> datos) {
         this.cotiza=cotiza;
+        this.datos=datos;
         initComponents();
         cboTarjetas.removeAllItems();
         int Precio =0;
@@ -201,7 +203,7 @@ private int contador =0;
 
         txtDatosFac.setBackground(new java.awt.Color(255, 255, 255));
         txtDatosFac.setForeground(new java.awt.Color(0, 0, 0));
-        txtDatosFac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Datos de facturación" }));
+        txtDatosFac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C/F", "Datos de facturación" }));
         txtDatosFac.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 txtDatosFacItemStateChanged(evt);
@@ -458,6 +460,8 @@ private int contador =0;
             escribir.write("  ");
             escribir.write(txtNumeroPaquete.getSelectedItem().toString());
             escribir.write("  ");
+            escribir.write("20/03/2023");
+            escribir.write("  ");
             escribir.write(String.valueOf(Precio));
             escribir.write("  ");
             escribir.close();
@@ -478,11 +482,18 @@ private int contador =0;
     }//GEN-LAST:event_txtVolverActionPerformed
 
     private void txtEnviarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnviarPagoActionPerformed
-
-        Cotiza factu0 = new Cotiza(txtDepOrigen.getSelectedItem().toString(), codigoPaquete+contador, txtDepDestino.getSelectedItem().toString(),  String.valueOf(Precio), txtNumeroPaquete.getSelectedItem().toString(), txtDatosFacturacion.getText(), txtServicio.getSelectedItem().toString(), txtCobro.getSelectedItem().toString(), txtDatosFac.getSelectedItem().toString());
+        if (txtCobro.getSelectedItem().toString()=="Cobro contra entrega") {
+            Cotiza factu0 = new Cotiza(txtDepOrigen.getSelectedItem().toString(), codigoPaquete+contador, txtDepDestino.getSelectedItem().toString(),  String.valueOf(Precio+5), txtNumeroPaquete.getSelectedItem().toString(), txtDatosFacturacion.getText(), txtServicio.getSelectedItem().toString(), txtCobro.getSelectedItem().toString(), txtDatosFac.getSelectedItem().toString());
         cotiza.add(factu0);
         contador=contador+1;
          JOptionPane.showMessageDialog(this,"Compra realizada con exito, su codigo de paquete es"+codigoPaquete+contador);
+        }else{
+         Cotiza factu0 = new Cotiza(txtDepOrigen.getSelectedItem().toString(), codigoPaquete+contador, txtDepDestino.getSelectedItem().toString(),  String.valueOf(Precio), txtNumeroPaquete.getSelectedItem().toString(), txtDatosFacturacion.getText(), txtServicio.getSelectedItem().toString(), txtCobro.getSelectedItem().toString(), txtDatosFac.getSelectedItem().toString());
+        cotiza.add(factu0);
+        contador=contador+1;
+         JOptionPane.showMessageDialog(this,"Compra realizada con exito, su codigo de paquete es"+codigoPaquete+contador);
+        }
+        
     }//GEN-LAST:event_txtEnviarPagoActionPerformed
 
     private void txtCotizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCotizarActionPerformed
@@ -682,13 +693,11 @@ private int contador =0;
     private void txtCobroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtCobroItemStateChanged
 
         String pago = txtCobro.getSelectedItem().toString();
+         cboTarjetas.removeAllItems();
         if (pago=="Cobro a mi cuenta") {
         for (RegistrarTarje tarjeta : tarjeta) {
-            cboTarjetas.removeAllItems();
             cboTarjetas.addItem(tarjeta.getNumero());
         }
-        }else{
-        cboTarjetas.removeAllItems();
         }
 
         // TODO add your handling code here:
@@ -713,6 +722,8 @@ private int contador =0;
             escribir.write(txtDepOrigen.getSelectedItem().toString());
             escribir.write("  ");
             escribir.write(txtDepDestino.getSelectedItem().toString());
+            escribir.write("  ");
+            escribir.write(cboTarjetas1.getSelectedItem().toString());
             escribir.write("  ");
             escribir.write(txtCobro.getSelectedItem().toString());
             escribir.write("  ");

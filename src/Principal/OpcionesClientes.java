@@ -247,7 +247,7 @@ public class OpcionesClientes extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         
-        Cotización pantalla = new Cotización(cotiza);
+        Cotización pantalla = new Cotización(cotiza, datos);
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
         this.setVisible(false);
