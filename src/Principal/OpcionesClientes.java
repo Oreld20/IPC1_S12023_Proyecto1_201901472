@@ -257,10 +257,10 @@ public class OpcionesClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        
-       String [] Cabezera = {"Codigo de paquete", "Tipo de Servicio", "Destinatario", "Total de Envio", "Tipo de Pago"};
-        String [][] Datos ={
-            {cotiza.get(WIDTH).getMunOrigen(),cotiza.get(0).getServicio(), cotiza.get(0).getDepDestino(), cotiza.get(0).getMunDestino(), cotiza.get(0).getCobro()}
+        if (cotiza.get(0)!=null) {
+            String [] Cabezera = {"Codigo de paquete", "Tipo de Servicio", "Destinatario", "Total de Envio", "Tipo de Pago"};
+       String [][] Datos ={
+            {cotiza.get(0).getMunOrigen(),cotiza.get(0).getServicio(), cotiza.get(0).getDepDestino(), cotiza.get(0).getMunDestino(), cotiza.get(0).getCobro()}
         };
         DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
         JTable tabla =new JTable(mod);
@@ -272,6 +272,63 @@ public class OpcionesClientes extends javax.swing.JFrame {
         ventana.setLocationRelativeTo(null);
         ventana.add(scroll);
         ventana.setVisible(true);
+        }
+         if (cotiza.get(1)!=null) {
+            String [] Cabezera = {"Codigo de paquete", "Tipo de Servicio", "Destinatario", "Total de Envio", "Tipo de Pago"};
+       String [][] Datos ={
+            {cotiza.get(0).getMunOrigen(),cotiza.get(0).getServicio(), cotiza.get(0).getDepDestino(), cotiza.get(0).getMunDestino(), cotiza.get(0).getCobro()},
+            {cotiza.get(1).getMunOrigen(),cotiza.get(1).getServicio(), cotiza.get(1).getDepDestino(), cotiza.get(1).getMunDestino(), cotiza.get(1).getCobro()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+          if (cotiza.get(2)!=null) {
+            String [] Cabezera = {"Codigo de paquete", "Tipo de Servicio", "Destinatario", "Total de Envio", "Tipo de Pago"};
+            String [][] Datos ={
+            {cotiza.get(0).getMunOrigen(),cotiza.get(0).getServicio(), cotiza.get(0).getDepDestino(), cotiza.get(0).getMunDestino(), cotiza.get(0).getCobro()},
+            {cotiza.get(1).getMunOrigen(),cotiza.get(1).getServicio(), cotiza.get(1).getDepDestino(), cotiza.get(1).getMunDestino(), cotiza.get(1).getCobro()},
+            {cotiza.get(2).getMunOrigen(),cotiza.get(2).getServicio(), cotiza.get(2).getDepDestino(), cotiza.get(2).getMunDestino(), cotiza.get(2).getCobro()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+          if (cotiza.get(3)!=null) {
+            String [] Cabezera = {"Codigo de paquete", "Tipo de Servicio", "Destinatario", "Total de Envio", "Tipo de Pago"};
+            String [][] Datos ={
+            {cotiza.get(0).getMunOrigen(),cotiza.get(0).getServicio(), cotiza.get(0).getDepDestino(), cotiza.get(0).getMunDestino(), cotiza.get(0).getCobro()},
+            {cotiza.get(1).getMunOrigen(),cotiza.get(1).getServicio(), cotiza.get(1).getDepDestino(), cotiza.get(1).getMunDestino(), cotiza.get(1).getCobro()},
+            {cotiza.get(2).getMunOrigen(),cotiza.get(2).getServicio(), cotiza.get(2).getDepDestino(), cotiza.get(2).getMunDestino(), cotiza.get(2).getCobro()},
+            {cotiza.get(3).getMunOrigen(),cotiza.get(3).getServicio(), cotiza.get(3).getDepDestino(), cotiza.get(3).getMunDestino(), cotiza.get(3).getCobro()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        
+       
         
         
         // TODO add your handling code here:

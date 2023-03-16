@@ -249,10 +249,10 @@ public class AgregarMunicipio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-         String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        if (muni.get(0)!=null) {
+             String [] Cabezera = {"Nombre", "Codigo", "Region"};
         String [][] Datos ={
-            {txtNombre.getText(),txtCodigo.getText(), Region.getSelectedItem().toString()}
+            {muni.get(0).getNombre(),muni.get(0).getCodigo(), muni.get(0).getDepartamento()}
         };
         DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
         JTable tabla =new JTable(mod);
@@ -264,6 +264,63 @@ public class AgregarMunicipio extends javax.swing.JFrame {
         ventana.setLocationRelativeTo(null);
         ventana.add(scroll);
         ventana.setVisible(true);
+        }
+        if (muni.get(1)!=null) {
+             String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {muni.get(0).getNombre(),muni.get(0).getCodigo(), muni.get(0).getDepartamento()},
+            {muni.get(1).getNombre(),muni.get(1).getCodigo(), muni.get(1).getDepartamento()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+         if (muni.get(2)!=null) {
+             String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {muni.get(0).getNombre(),muni.get(0).getCodigo(), muni.get(0).getDepartamento()},
+            {muni.get(1).getNombre(),muni.get(1).getCodigo(), muni.get(1).getDepartamento()},
+            {muni.get(2).getNombre(),muni.get(2).getCodigo(), muni.get(2).getDepartamento()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+          if (muni.get(3)!=null) {
+             String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {muni.get(0).getNombre(),muni.get(0).getCodigo(), muni.get(0).getDepartamento()},
+            {muni.get(1).getNombre(),muni.get(1).getCodigo(), muni.get(1).getDepartamento()},
+            {muni.get(2).getNombre(),muni.get(2).getCodigo(), muni.get(2).getDepartamento()},
+            {muni.get(3).getNombre(),muni.get(3).getCodigo(), muni.get(3).getDepartamento()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        
+        
 
 
 

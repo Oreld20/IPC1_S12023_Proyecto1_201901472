@@ -234,7 +234,7 @@ public static ArrayList <AgregarDepa> departamentos = new ArrayList <AgregarDepa
            AgregarDepa dep = new AgregarDepa(Region.getSelectedItem().toString(), txtNombre.getText(), txtCodigo.getText());
            departamentos.add(dep);
             JOptionPane.showMessageDialog(this,"Usuario creado con exito");
-            txtCodigo.setText("");
+            txtNombre.setText("");
             txtCodigo.setText("");
             
         }else{
@@ -247,14 +247,10 @@ public static ArrayList <AgregarDepa> departamentos = new ArrayList <AgregarDepa
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        
-       
-        
-        
-        String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        if (departamentos.get(0)!=null) {
+            String [] Cabezera = {"Nombre", "Codigo", "Region"};
         String [][] Datos ={
-            
-            {txtNombre.getText(),txtCodigo.getText(), Region.getSelectedItem().toString()}
+            {departamentos.get(0).getNombre(),departamentos.get(0).getCodigo(), departamentos.get(0).getRegion()}
         };
         DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
         JTable tabla =new JTable(mod);
@@ -266,6 +262,61 @@ public static ArrayList <AgregarDepa> departamentos = new ArrayList <AgregarDepa
         ventana.setLocationRelativeTo(null);
         ventana.add(scroll);
         ventana.setVisible(true);
+        }
+        if (departamentos.get(1)!=null) {
+           
+            String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {departamentos.get(0).getNombre(),departamentos.get(0).getCodigo(), departamentos.get(0).getRegion()},
+            {departamentos.get(1).getNombre(),departamentos.get(1).getCodigo(), departamentos.get(1).getRegion()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+         if (departamentos.get(2)!=null) {
+            String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {departamentos.get(0).getNombre(),departamentos.get(0).getCodigo(), departamentos.get(0).getRegion()},
+            {departamentos.get(1).getNombre(),departamentos.get(1).getCodigo(), departamentos.get(1).getRegion()},
+            {departamentos.get(2).getNombre(),departamentos.get(2).getCodigo(), departamentos.get(2).getRegion()}};
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+          if (departamentos.get(3)!=null) {
+            String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {departamentos.get(0).getNombre(),departamentos.get(0).getCodigo(), departamentos.get(0).getRegion()},
+            {departamentos.get(1).getNombre(),departamentos.get(1).getCodigo(), departamentos.get(1).getRegion()},
+            {departamentos.get(2).getNombre(),departamentos.get(2).getCodigo(), departamentos.get(2).getRegion()},
+            {departamentos.get(3).getNombre(),departamentos.get(3).getCodigo(), departamentos.get(3).getRegion()}};
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 

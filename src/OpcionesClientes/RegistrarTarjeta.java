@@ -258,10 +258,10 @@ private String codigo;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        String [] Cabezera = {"Nombre del posesor", "Numero", "Vencimiento"};
+        if (tarjeta.get(0)!=null) {
+            String [] Cabezera = {"Nombre del posesor", "Numero", "Vencimiento"};
         String [][] Datos ={
-            {txtPosesor.getText(),codigo, txtCodigo.getText()}
+            {tarjeta.get(0).getNombrePosesor(),tarjeta.get(0).getNumero(), tarjeta.get(0).getVencimiento()}
         };
         DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
         JTable tabla =new JTable(mod);
@@ -273,6 +273,62 @@ private String codigo;
         ventana.setLocationRelativeTo(null);
         ventana.add(scroll);
         ventana.setVisible(true);
+        }
+        if (tarjeta.get(1)!=null) {
+            String [] Cabezera = {"Nombre del posesor", "Numero", "Vencimiento"};
+        String [][] Datos ={
+            {tarjeta.get(0).getNombrePosesor(),tarjeta.get(0).getNumero(), tarjeta.get(0).getVencimiento()},
+            {tarjeta.get(1).getNombrePosesor(),tarjeta.get(1).getNumero(), tarjeta.get(1).getVencimiento()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+         if (tarjeta.get(2)!=null) {
+            String [] Cabezera = {"Nombre del posesor", "Numero", "Vencimiento"};
+        String [][] Datos ={
+            {tarjeta.get(0).getNombrePosesor(),tarjeta.get(0).getNumero(), tarjeta.get(0).getVencimiento()},
+            {tarjeta.get(1).getNombrePosesor(),tarjeta.get(1).getNumero(), tarjeta.get(1).getVencimiento()},
+            {tarjeta.get(2).getNombrePosesor(),tarjeta.get(2).getNumero(), tarjeta.get(2).getVencimiento()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+         if (tarjeta.get(3)!=null) {
+            String [] Cabezera = {"Nombre del posesor", "Numero", "Vencimiento"};
+        String [][] Datos ={
+            {tarjeta.get(0).getNombrePosesor(),tarjeta.get(0).getNumero(), tarjeta.get(0).getVencimiento()},
+            {tarjeta.get(1).getNombrePosesor(),tarjeta.get(1).getNumero(), tarjeta.get(1).getVencimiento()},
+            {tarjeta.get(2).getNombrePosesor(),tarjeta.get(2).getNumero(), tarjeta.get(2).getVencimiento()},
+            {tarjeta.get(3).getNombrePosesor(),tarjeta.get(3).getNumero(), tarjeta.get(3).getVencimiento()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        
         
 
 

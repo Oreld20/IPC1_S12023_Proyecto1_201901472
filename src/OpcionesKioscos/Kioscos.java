@@ -239,11 +239,11 @@ public class Kioscos extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if (!txtNombre.getText().isEmpty()&&!txtCodigo.getText().isEmpty()) {
-            Kiosco kiosoco0=new Kiosco(Region.getSelectedItem().toString(), txtCodigo.getText(), txtCodigo.getText());
+            Kiosco kiosoco0=new Kiosco(Region.getSelectedItem().toString(), txtCodigo.getText(), txtNombre.getText());
             kiosco.add(kiosoco0);
             JOptionPane.showMessageDialog(this,"Usuario creado con exito");
             txtCodigo.setText("");
-            txtCodigo.setText("");
+            txtNombre.setText("");
         }else{
         JOptionPane.showMessageDialog(this,"Todos los campos deben estar llenos");
         }
@@ -253,10 +253,10 @@ public class Kioscos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-  
-        String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        if (kiosco.get(0)!=null) {
+            String [] Cabezera = {"Nombre", "Codigo", "Region"};
         String [][] Datos ={
-            {txtNombre.getText(),txtCodigo.getText(), Region.getSelectedItem().toString()}
+            {kiosco.get(0).getNombre(),kiosco.get(0).getCodigo(), kiosco.get(0).getRegion()}
         };
         DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
         JTable tabla =new JTable(mod);
@@ -268,6 +268,63 @@ public class Kioscos extends javax.swing.JFrame {
         ventana.setLocationRelativeTo(null);
         ventana.add(scroll);
         ventana.setVisible(true); 
+        }
+         if (kiosco.get(1)!=null) {
+        String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {kiosco.get(0).getNombre(),kiosco.get(0).getCodigo(), kiosco.get(0).getRegion()},
+            {kiosco.get(1).getNombre(),kiosco.get(1).getCodigo(), kiosco.get(1).getRegion()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true); 
+        }
+         if (kiosco.get(2)!=null) {
+        String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {kiosco.get(0).getNombre(),kiosco.get(0).getCodigo(), kiosco.get(0).getRegion()},
+            {kiosco.get(1).getNombre(),kiosco.get(1).getCodigo(), kiosco.get(1).getRegion()},
+            {kiosco.get(2).getNombre(),kiosco.get(2).getCodigo(), kiosco.get(2).getRegion()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true); 
+        }
+         if (kiosco.get(3)!=null) {
+        String [] Cabezera = {"Nombre", "Codigo", "Region"};
+        String [][] Datos ={
+            {kiosco.get(0).getNombre(),kiosco.get(0).getCodigo(), kiosco.get(0).getRegion()},
+            {kiosco.get(1).getNombre(),kiosco.get(1).getCodigo(), kiosco.get(1).getRegion()},
+            {kiosco.get(2).getNombre(),kiosco.get(2).getCodigo(), kiosco.get(2).getRegion()},
+            {kiosco.get(3).getNombre(),kiosco.get(3).getCodigo(), kiosco.get(3).getRegion()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true); 
+        }
+  
+        
         
         
         

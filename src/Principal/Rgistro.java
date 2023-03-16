@@ -208,6 +208,7 @@ public class Rgistro extends javax.swing.JFrame {
         jLabel13.setText("Sobrenombre:");
 
         Telefono.setBackground(new java.awt.Color(255, 255, 255));
+        Telefono.setText("XXXX-XXXX");
         Telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TelefonoActionPerformed(evt);
@@ -249,6 +250,7 @@ public class Rgistro extends javax.swing.JFrame {
 
         FechaNacimiento.setBackground(new java.awt.Color(255, 255, 255));
         FechaNacimiento.setForeground(new java.awt.Color(0, 0, 0));
+        FechaNacimiento.setText("dd/mm/aa");
 
         Kiosco.setBackground(new java.awt.Color(255, 255, 255));
         Kiosco.setForeground(new java.awt.Color(0, 0, 0));

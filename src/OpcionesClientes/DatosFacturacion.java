@@ -253,10 +253,10 @@ public static ArrayList<DatosFactu> datos = new ArrayList<DatosFactu>();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        String [] Cabezera = {"Nombre Completo", "Direccion", "Nit"};
+        if (datos.get(0)!=null) {
+            String [] Cabezera = {"Nombre Completo", "Direccion", "Nit"};
         String [][] Datos ={
-            {txtNombre.getText(),txtDireccion.getText(), txtNit.getText()}
+            {datos.get(0).getNombre(),datos.get(0).getDireccion(),datos.get(0).getNit()}
         };
         DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
         JTable tabla =new JTable(mod);
@@ -268,6 +268,62 @@ public static ArrayList<DatosFactu> datos = new ArrayList<DatosFactu>();
         ventana.setLocationRelativeTo(null);
         ventana.add(scroll);
         ventana.setVisible(true);
+        }
+        if (datos.get(1)!=null) {
+            String [] Cabezera = {"Nombre Completo", "Direccion", "Nit"};
+        String [][] Datos ={
+            {datos.get(0).getNombre(),datos.get(0).getDireccion(),datos.get(0).getNit()},
+            {datos.get(1).getNombre(),datos.get(1).getDireccion(),datos.get(1).getNit()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        if (datos.get(2)!=null) {
+            String [] Cabezera = {"Nombre Completo", "Direccion", "Nit"};
+        String [][] Datos ={
+            {datos.get(0).getNombre(),datos.get(0).getDireccion(),datos.get(0).getNit()},
+            {datos.get(1).getNombre(),datos.get(1).getDireccion(),datos.get(1).getNit()},
+            {datos.get(2).getNombre(),datos.get(2).getDireccion(),datos.get(2).getNit()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        if (datos.get(3)!=null) {
+            String [] Cabezera = {"Nombre Completo", "Direccion", "Nit"};
+        String [][] Datos ={
+            {datos.get(0).getNombre(),datos.get(0).getDireccion(),datos.get(0).getNit()},
+            {datos.get(1).getNombre(),datos.get(1).getDireccion(),datos.get(1).getNit()},
+            {datos.get(2).getNombre(),datos.get(2).getDireccion(),datos.get(2).getNit()},
+            {datos.get(3).getNombre(),datos.get(3).getDireccion(),datos.get(3).getNit()}
+        };
+        DefaultTableModel mod = new DefaultTableModel(Datos, Cabezera);
+        JTable tabla =new JTable(mod);
+        JScrollPane scroll = new JScrollPane(tabla);
+        scroll.setBounds(40, 40, 400, 200);
+        JFrame ventana = new JFrame();
+        ventana.setLayout(null);
+        ventana.setSize(500,500);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+        }
+        
         
 
 
